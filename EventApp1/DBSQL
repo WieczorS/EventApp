@@ -1,0 +1,163 @@
+create table public.locations
+(
+    id          integer not null,
+    name        text,
+    address     text,
+    city        text,
+    postal_code varchar(7),
+    country     varchar
+);
+
+alter table public.locations
+    owner to postgres;
+
+alter table public.locations
+    add primary key (id);
+
+create table public.companies
+(
+    id          integer not null,
+    name        text,
+    description text,
+    location_id integer
+);
+
+alter table public.companies
+    owner to postgres;
+
+alter table public.companies
+    add primary key (id);
+
+alter table public.companies
+    add foreign key (location_id) references public.locations;
+
+create table public.events
+(
+    id           serial,
+    name         text,
+    description  text,
+    start_date   timestamp default now() not null,
+    end_date     timestamp               not null,
+    location_id  integer,
+    organizer_id integer
+);
+
+alter table public.events
+    owner to postgres;
+
+alter table public.events
+    add primary key (id);
+
+alter table public.events
+    add foreign key (location_id) references public.locations;
+
+alter table public.events
+    add foreign key (organizer_id) references public.companies;
+
+create table public.exhibitions
+(
+    id           integer not null,
+    name         text,
+    description  text,
+    sector       text,
+    event_id     integer,
+    exhibitor_id integer,
+    start_date   timestamp,
+    end_date     timestamp,
+    capacity     integer
+);
+
+alter table public.exhibitions
+    owner to postgres;
+
+alter table public.exhibitions
+    add primary key (id);
+
+alter table public.exhibitions
+    add foreign key (event_id) references public.events;
+
+alter table public.exhibitions
+    add foreign key (exhibitor_id) references public.companies;
+
+create table public.user_type
+(
+    id        integer,
+    user_type text
+);
+
+alter table public.user_type
+    owner to postgres;
+
+alter table public.user_type
+    add unique (id);
+
+alter table public.user_type
+    add unique (user_type);
+
+create table public.users
+(
+    id            integer not null,
+    name          text,
+    surname       text,
+    user_type_id  integer,
+    company_id    integer,
+    email         text,
+    login         text    not null,
+    password      text,
+    password_salt text
+);
+
+alter table public.users
+    owner to postgres;
+
+alter table public.users
+    add primary key (id);
+
+alter table public.users
+    add constraint users_pk
+        unique (login);
+
+alter table public.users
+    add foreign key (user_type_id) references public.user_type (id);
+
+alter table public.users
+    add foreign key (company_id) references public.companies;
+
+create table public.registrations
+(
+    id            integer not null,
+    event_id      integer,
+    exhibition_id integer
+);
+
+alter table public.registrations
+    owner to postgres;
+
+alter table public.registrations
+    add primary key (id);
+
+alter table public.registrations
+    add foreign key (event_id) references public.events;
+
+alter table public.registrations
+    add foreign key (exhibition_id) references public.exhibitions;
+
+create table public.agenda
+(
+    id            integer not null,
+    exhibition_id integer,
+    title         text,
+    description   text,
+    start_date    timestamp,
+    end_date      timestamp
+);
+
+alter table public.agenda
+    owner to postgres;
+
+alter table public.agenda
+    add primary key (id);
+
+alter table public.agenda
+    add foreign key (exhibition_id) references public.exhibitions;
+
