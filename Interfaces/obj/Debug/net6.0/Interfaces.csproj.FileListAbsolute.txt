@@ -1,0 +1,15 @@
+/home/halfbit/RiderProjects/EventApp/Interfaces/bin/Debug/net6.0/Interfaces.deps.json
+/home/halfbit/RiderProjects/EventApp/Interfaces/bin/Debug/net6.0/Interfaces.dll
+/home/halfbit/RiderProjects/EventApp/Interfaces/bin/Debug/net6.0/Interfaces.pdb
+/home/halfbit/RiderProjects/EventApp/Interfaces/bin/Debug/net6.0/models.dll
+/home/halfbit/RiderProjects/EventApp/Interfaces/bin/Debug/net6.0/models.pdb
+/home/halfbit/RiderProjects/EventApp/Interfaces/obj/Debug/net6.0/Interfaces.csproj.AssemblyReference.cache
+/home/halfbit/RiderProjects/EventApp/Interfaces/obj/Debug/net6.0/Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+/home/halfbit/RiderProjects/EventApp/Interfaces/obj/Debug/net6.0/Interfaces.AssemblyInfoInputs.cache
+/home/halfbit/RiderProjects/EventApp/Interfaces/obj/Debug/net6.0/Interfaces.AssemblyInfo.cs
+/home/halfbit/RiderProjects/EventApp/Interfaces/obj/Debug/net6.0/Interfaces.csproj.CoreCompileInputs.cache
+/home/halfbit/RiderProjects/EventApp/Interfaces/obj/Debug/net6.0/Interfaces.csproj.CopyComplete
+/home/halfbit/RiderProjects/EventApp/Interfaces/obj/Debug/net6.0/Interfaces.dll
+/home/halfbit/RiderProjects/EventApp/Interfaces/obj/Debug/net6.0/refint/Interfaces.dll
+/home/halfbit/RiderProjects/EventApp/Interfaces/obj/Debug/net6.0/Interfaces.pdb
+/home/halfbit/RiderProjects/EventApp/Interfaces/obj/Debug/net6.0/ref/Interfaces.dll

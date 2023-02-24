@@ -1,0 +1,12 @@
+/home/halfbit/RiderProjects/EventApp/models/obj/Debug/net6.0/models.csproj.AssemblyReference.cache
+/home/halfbit/RiderProjects/EventApp/models/obj/Debug/net6.0/models.GeneratedMSBuildEditorConfig.editorconfig
+/home/halfbit/RiderProjects/EventApp/models/obj/Debug/net6.0/models.AssemblyInfoInputs.cache
+/home/halfbit/RiderProjects/EventApp/models/obj/Debug/net6.0/models.AssemblyInfo.cs
+/home/halfbit/RiderProjects/EventApp/models/obj/Debug/net6.0/models.csproj.CoreCompileInputs.cache
+/home/halfbit/RiderProjects/EventApp/models/bin/Debug/net6.0/models.deps.json
+/home/halfbit/RiderProjects/EventApp/models/bin/Debug/net6.0/models.dll
+/home/halfbit/RiderProjects/EventApp/models/bin/Debug/net6.0/models.pdb
+/home/halfbit/RiderProjects/EventApp/models/obj/Debug/net6.0/models.dll
+/home/halfbit/RiderProjects/EventApp/models/obj/Debug/net6.0/refint/models.dll
+/home/halfbit/RiderProjects/EventApp/models/obj/Debug/net6.0/models.pdb
+/home/halfbit/RiderProjects/EventApp/models/obj/Debug/net6.0/ref/models.dll
