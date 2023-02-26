@@ -24,6 +24,11 @@ namespace EventApp1.Controllers
             return await _repository.GetEventByIdAsync(n);
             
         }
+        /// <summary>
+        /// Creates an Event.
+        /// </summary>
+        /// <param name="eventToCreate"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<CreatedAtActionResult> InsertAsync(Event eventToCreate)
         {
@@ -32,7 +37,11 @@ namespace EventApp1.Controllers
             
             return CreatedAtAction(nameof(GetEvent), new { n = insertedEvent.Id }, insertedEvent);
         }
-
+        /// <summary>
+        /// Deletes news with given id
+        /// </summary>
+        /// <param name="idNews"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<OkResult> DeleteNews([FromRoute] int idNews)
         {

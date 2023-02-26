@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dkNiQGB3cN3qKObPnonnO0qKLaOYARrbY4gi1VfRh8t8FMCH2++vE4EJZ+chveDWhrB37H/4dPk8Xgdt3Ras7w==",
+  "dgSpecHash": "cLLTh28ni13Q09GzwsBB0lRYxx7lRRFHrYTKRRCoMcSZsoV/VXCIgDi+Yyu7nsu+nOhkta+vYkvU9loLB2hnfg==",
   "success": true,
-  "projectFilePath": "/home/halfbit/RiderProjects/EventApp/Interfaces/Interfaces.csproj",
+  "projectFilePath": "/Users/kuba/RiderProjects/eventApp/Interfaces/Interfaces.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

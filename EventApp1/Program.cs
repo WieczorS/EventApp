@@ -2,6 +2,7 @@ using System.Data;
 using EventApp1.Config;
 using EventApp1.Repositories;
 using interfaces;
+using Microsoft.OpenApi.Models;
 using Npgsql;
 
 
@@ -16,7 +17,15 @@ var connStrings = builder.Configuration.GetSection("connectionStrings").Get<DbO>
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+    options.SwaggerDoc("v1",new OpenApiInfo
+        {
+            Version = "v1",
+            Title = "EventApp",
+            Description = "Aplikacja do obsługi wydarzeń",
+            
+        }
+    ));
 builder.Services.AddTransient<NpgsqlConnection>((sp) => new NpgsqlConnection(connStrings.Main));
 builder.Services.AddTransient<IEventRepository, EventRepository>(); //dodanie repozytorium do konternera DI
 var app = builder.Build();
@@ -27,7 +36,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-Console.WriteLine("test");
+
 //app.UseHttpsRedirection();
 
 app.UseAuthorization();

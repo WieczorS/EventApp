@@ -10,3 +10,15 @@
 /home/halfbit/RiderProjects/EventApp/models/obj/Debug/net6.0/refint/models.dll
 /home/halfbit/RiderProjects/EventApp/models/obj/Debug/net6.0/models.pdb
 /home/halfbit/RiderProjects/EventApp/models/obj/Debug/net6.0/ref/models.dll
+/Users/kuba/RiderProjects/eventApp/models/bin/Debug/net6.0/models.deps.json
+/Users/kuba/RiderProjects/eventApp/models/bin/Debug/net6.0/models.dll
+/Users/kuba/RiderProjects/eventApp/models/bin/Debug/net6.0/models.pdb
+/Users/kuba/RiderProjects/eventApp/models/obj/Debug/net6.0/models.csproj.AssemblyReference.cache
+/Users/kuba/RiderProjects/eventApp/models/obj/Debug/net6.0/models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kuba/RiderProjects/eventApp/models/obj/Debug/net6.0/models.AssemblyInfoInputs.cache
+/Users/kuba/RiderProjects/eventApp/models/obj/Debug/net6.0/models.AssemblyInfo.cs
+/Users/kuba/RiderProjects/eventApp/models/obj/Debug/net6.0/models.csproj.CoreCompileInputs.cache
+/Users/kuba/RiderProjects/eventApp/models/obj/Debug/net6.0/models.dll
+/Users/kuba/RiderProjects/eventApp/models/obj/Debug/net6.0/refint/models.dll
+/Users/kuba/RiderProjects/eventApp/models/obj/Debug/net6.0/models.pdb
+/Users/kuba/RiderProjects/eventApp/models/obj/Debug/net6.0/ref/models.dll
