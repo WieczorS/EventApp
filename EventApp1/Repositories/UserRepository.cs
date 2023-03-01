@@ -1,6 +1,7 @@
 
 using System.Data;
 using EventApp1.Models;
+using NpgsqlTypes;
 using interfaces;
 using Npgsql;
 
@@ -28,13 +29,28 @@ public class UserRepository:IUserService
 
     async Task<User> IUserService.GetUserAsync(string username)
     {
+        var r = new User();
         await using (var cmd = new NpgsqlCommand(
                          @"select * from users
                                     where login = @login;", _conn))
         {
             cmd.Parameters.AddWithValue("login", username);
-            return (User)await cmd.ExecuteScalarAsync();
+            using (var dr = await cmd.ExecuteReaderAsync())
+            {
+                if (dr.Read())
+                {
+                    r.id = (int)(dr["id"]);
+                    r.name = (dr["name"]) as string;
+                    r.surname = (dr["surname"]) as string;
+                    r.email = (dr["email"]) as string;
+                    r.login = (dr["login"]) as string;
+                    r.password = (dr["login"]) as string;
+                    r.passwordSalt = (dr["password_salt"]) as string;
+                }
+            }
         }
+
+        return r;
     }
 
 }

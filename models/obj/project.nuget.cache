@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oBA1zjNjYsIYPGdF+ixt4t9OzJeLFtgk+FvHu09slRjVX+eNwIZiAV1S7TjzsO7nuCvNauaoXqXkMqXXfy6ObA==",
+  "dgSpecHash": "lFA1t74SNz/GrrwdaA/G53rV9dqc7VerKtCAiqCYn13s5OUnv//yeq6ObT2dFD5pR7o4Jqx2MYAclCN9xu3hzA==",
   "success": true,
-  "projectFilePath": "/Users/kuba/RiderProjects/eventApp/models/models.csproj",
+  "projectFilePath": "/home/halfbit/RiderProjects/EventApp/models/models.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

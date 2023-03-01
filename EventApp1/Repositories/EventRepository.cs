@@ -82,15 +82,16 @@ public class EventRepository:IEventRepository
     }
     
     //UPDATE
-
+//nn
     public async Task UpdateAsync(Event eventToUpdate)
     {
         await using (var cmd = new NpgsqlCommand(@"UPDATE events set
                      name = COALESCE(@Name, events.name),
                      description = COALESCE(@Description, events.description),
                      start_date = COALESCE(@StartDate, events.start_date),
-                     end_date = COALESCE(@EndDate, events.end_date),
+                     end_date = COALESCE(@EndDate, events.end_date), 
                      location_id = COALESCE(@LocationId, events.location_id)
+         
                                                             WHERE id = @id",_conn))
         {
             cmd.Parameters.AddWithValue("Name", eventToUpdate.Name);

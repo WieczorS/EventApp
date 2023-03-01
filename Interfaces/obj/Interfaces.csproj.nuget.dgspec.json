@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kuba/RiderProjects/eventApp/Interfaces/Interfaces.csproj": {}
+    "/home/halfbit/RiderProjects/EventApp/Interfaces/Interfaces.csproj": {}
   },
   "projects": {
-    "/Users/kuba/RiderProjects/eventApp/Interfaces/Interfaces.csproj": {
+    "/home/halfbit/RiderProjects/EventApp/Interfaces/Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kuba/RiderProjects/eventApp/Interfaces/Interfaces.csproj",
+        "projectUniqueName": "/home/halfbit/RiderProjects/EventApp/Interfaces/Interfaces.csproj",
         "projectName": "Interfaces",
-        "projectPath": "/Users/kuba/RiderProjects/eventApp/Interfaces/Interfaces.csproj",
-        "packagesPath": "/Users/kuba/.nuget/packages/",
-        "outputPath": "/Users/kuba/RiderProjects/eventApp/Interfaces/obj/",
+        "projectPath": "/home/halfbit/RiderProjects/EventApp/Interfaces/Interfaces.csproj",
+        "packagesPath": "/home/halfbit/.nuget/packages/",
+        "outputPath": "/home/halfbit/RiderProjects/EventApp/Interfaces/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/kuba/.nuget/NuGet/NuGet.Config"
+          "/home/halfbit/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -26,8 +26,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/kuba/RiderProjects/eventApp/models/models.csproj": {
-                "projectPath": "/Users/kuba/RiderProjects/eventApp/models/models.csproj"
+              "/home/halfbit/RiderProjects/EventApp/models/models.csproj": {
+                "projectPath": "/home/halfbit/RiderProjects/EventApp/models/models.csproj"
               }
             }
           }
@@ -57,21 +57,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.406/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/halfbit/.dotnet/sdk/6.0.405/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/kuba/RiderProjects/eventApp/models/models.csproj": {
+    "/home/halfbit/RiderProjects/EventApp/models/models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kuba/RiderProjects/eventApp/models/models.csproj",
+        "projectUniqueName": "/home/halfbit/RiderProjects/EventApp/models/models.csproj",
         "projectName": "models",
-        "projectPath": "/Users/kuba/RiderProjects/eventApp/models/models.csproj",
-        "packagesPath": "/Users/kuba/.nuget/packages/",
-        "outputPath": "/Users/kuba/RiderProjects/eventApp/models/obj/",
+        "projectPath": "/home/halfbit/RiderProjects/EventApp/models/models.csproj",
+        "packagesPath": "/home/halfbit/.nuget/packages/",
+        "outputPath": "/home/halfbit/RiderProjects/EventApp/models/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/kuba/.nuget/NuGet/NuGet.Config"
+          "/home/halfbit/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -110,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.406/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/halfbit/.dotnet/sdk/6.0.405/RuntimeIdentifierGraph.json"
         }
       }
     }
