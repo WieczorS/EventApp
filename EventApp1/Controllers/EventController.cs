@@ -1,10 +1,12 @@
 using EventApp1.Models;
 using interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventApp1.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("[controller]")]
 
     public class EventController : Controller

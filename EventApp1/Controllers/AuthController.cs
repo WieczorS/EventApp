@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
+using System.Runtime.CompilerServices;
 using EventApp1.Config;
 using EventApp1.Models;
 using interfaces;
@@ -23,11 +24,11 @@ public class AuthController : Controller
     
 
     
-    [HttpPost]
-    public IActionResult GenerateToken([FromBody] User user)
-    {
-        return Ok();
-    }
+    // [HttpPost]
+    // public IActionResult GenerateToken([FromBody] User user)
+    // {
+    //     return Ok();
+    // }
 [HttpGet]
     public async Task<UserDto> AuthenticateAsync(string username, string password)
     {
@@ -37,7 +38,14 @@ public class AuthController : Controller
             return null;
         }
 
-        return new UserDto { Id = user.id, Role = user.userTypeId, Username = user.login };
+        return new UserDto { Id = user.Id, Role = user.userTypeId, Username = user.login };
+    }
+
+    [HttpPost]
+    public async Task<object?> AddUser(User user)
+    {
+      return await _userServiceRepo.AddUserAsync(user);
+       
     }
 
 

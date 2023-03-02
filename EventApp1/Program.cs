@@ -2,6 +2,7 @@ using System.Data;
 using System.Text;
 using EventApp1.Config;
 using EventApp1.Repositories;
+using EventApp1.Services;
 using interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
@@ -36,6 +37,7 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddTransient<NpgsqlConnection>((sp) => new NpgsqlConnection(connStrings.Main));
 builder.Services.AddTransient<IEventRepository, EventRepository>(); //dodanie repozytorium do konternera DI
 builder.Services.AddTransient<IUserService, UserRepository>(); //dodanie repozytorium do konternera DI
+builder.Services.AddTransient<IPasswordServices, PasswordServices>(); //dodanie repozytorium do konternera DI
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
