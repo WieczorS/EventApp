@@ -8,10 +8,20 @@
 
     <ItemGroup>
       <Compile Remove="Program.cs" />
+      <Compile Remove="ITokenServices.cs" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\models\models.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions">
+        <HintPath>..\..\..\.dotnet\shared\Microsoft.AspNetCore.App\6.0.13\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AspNetCore.Mvc.Core">
+        <HintPath>..\..\..\.dotnet\shared\Microsoft.AspNetCore.App\6.0.13\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

@@ -10,7 +10,7 @@ public class EventRepository:IEventRepository
 {
     private readonly NpgsqlConnection _conn;
     private IEventRepository _eventRepositoryImplementation;
-    private IEventRepository _eventRepositoryImplementation1;
+
 
 
     public EventRepository(NpgsqlConnection conn)           //constructor of connection to DB

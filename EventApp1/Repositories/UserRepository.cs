@@ -50,7 +50,7 @@ public class UserRepository:IUserService
                     r.surname = (dr["surname"]) as string;
                     r.email = (dr["email"]) as string;
                     r.login = (dr["login"]) as string;
-                    r.password = (dr["login"]) as string;
+                    r.password = (dr["password"]) as string;
                     r.passwordSalt = (dr["password_salt"]) as string;
                 }
             }
@@ -59,28 +59,28 @@ public class UserRepository:IUserService
         return r;
     }
 
-    public async Task<object?> AddUserAsync(User user)
+    public async Task AddUserAsync(UserAddDto user)
     {
         var newUser = new User();
         var pwdSalt = _passwordServices.GenerateRandomSalt();
         var passwordHash = _passwordServices.HashPassword(pwdSalt, user.password);
         await using (var cmd = new NpgsqlCommand(
-                         @" INSERT INTO users
-            (name, surname, user_type_id, company_id, email, login, password, password_salt)
-            VALUES(@name, @surname, @userTypeId, @companyId, @email, @login, @password, @passwordSalt)
+                         @"INSERT INTO users (name, surname, user_type_id, company_id, email, login, password, password_salt) 
+                                VALUES 
+                                (@name, @surname, @userTypeId, @companyId, @email, @login, @password, @passwordSalt)
                     returning id;", _conn))
         {
             
             cmd.Parameters.AddWithValue("name", user.name);
             cmd.Parameters.AddWithValue("surname", user.surname);
-            cmd.Parameters.AddWithValue("user_type_id", user.userTypeId);
-            cmd.Parameters.AddWithValue("company_id", user.companyId);
+            cmd.Parameters.AddWithValue("userTypeId", user.UserTypeId);
+            cmd.Parameters.AddWithValue("companyId", user.CompanyId);
             cmd.Parameters.AddWithValue("email", user.email);
             cmd.Parameters.AddWithValue("login", user.login);
             cmd.Parameters.AddWithValue("password", passwordHash);
-            cmd.Parameters.AddWithValue("passwordSalt", user.passwordSalt);
-            var i = await cmd.ExecuteScalarAsync();
-            return i;
+            cmd.Parameters.AddWithValue("passwordSalt", Convert.ToBase64String(pwdSalt)); 
+            await cmd.ExecuteScalarAsync();
+            
         }
         
     }
