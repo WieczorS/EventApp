@@ -194,6 +194,7 @@
       "System.Text.Json/4.7.2": {},
       "Interfaces/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.0",
           "models": "1.0.0"
         },
         "runtime": {
@@ -201,6 +202,9 @@
         }
       },
       "models/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.0"
+        },
         "runtime": {
           "models.dll": {}
         }

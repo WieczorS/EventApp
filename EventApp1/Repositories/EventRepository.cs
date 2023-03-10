@@ -1,7 +1,6 @@
 using System.Data;
 using interfaces;
 using EventApp1.Models;
-using Microsoft.AspNetCore.Mvc.Diagnostics;
 using Npgsql;
 
 namespace EventApp1.Repositories;
@@ -9,13 +8,14 @@ namespace EventApp1.Repositories;
 public class EventRepository:IEventRepository
 {
     private readonly NpgsqlConnection _conn;
-    private IEventRepository _eventRepositoryImplementation;
+    
 
 
 
     public EventRepository(NpgsqlConnection conn)           //constructor of connection to DB
-     {
+    {
          _conn = conn;
+        
          if( _conn.State != ConnectionState.Open)
          {
              _conn.Open();
@@ -37,14 +37,15 @@ public class EventRepository:IEventRepository
                          _conn))
 
         {
-            cmd.Parameters.AddWithValue("Name", eventToCreate.Name);
-            cmd.Parameters.AddWithValue("Description", eventToCreate.Description);
+            if (eventToCreate.Name != null) cmd.Parameters.AddWithValue("Name", eventToCreate.Name);
+            if (eventToCreate.Description != null)
+                cmd.Parameters.AddWithValue("Description", eventToCreate.Description);
             cmd.Parameters.AddWithValue("StartDate", eventToCreate.StartDate);
             cmd.Parameters.AddWithValue("EndDate", eventToCreate.EndDate);
             cmd.Parameters.AddWithValue("LocationId", eventToCreate.LocationId);
             cmd.Parameters.AddWithValue("OrganizerId", eventToCreate.OrganizerId);
             
-            return (int)(await cmd.ExecuteScalarAsync());
+            return (int)((await cmd.ExecuteScalarAsync()) ?? throw new InvalidOperationException());
         }        
     }
     
@@ -94,8 +95,9 @@ public class EventRepository:IEventRepository
          
                                                             WHERE id = @id",_conn))
         {
-            cmd.Parameters.AddWithValue("Name", eventToUpdate.Name);
-            cmd.Parameters.AddWithValue("Description", eventToUpdate.Description);
+            if (eventToUpdate.Name != null) cmd.Parameters.AddWithValue("Name", eventToUpdate.Name);
+            if (eventToUpdate.Description != null)
+                cmd.Parameters.AddWithValue("Description", eventToUpdate.Description);
             cmd.Parameters.AddWithValue("StartDate", eventToUpdate.StartDate);
             cmd.Parameters.AddWithValue("EndDate", eventToUpdate.EndDate);
             cmd.Parameters.AddWithValue("LocationId", eventToUpdate.LocationId);
@@ -108,7 +110,7 @@ public class EventRepository:IEventRepository
 
     public async Task<int> DeleteEventAsync(int eventToDelete)
     {
-        await using (var cmd = new NpgsqlCommand(@"Delete from news where id = @id"))
+        await using (var cmd = new NpgsqlCommand(@"Delete from events where id = @id"))
         {
             cmd.Parameters.AddWithValue("id", eventToDelete);
             return await cmd.ExecuteNonQueryAsync();

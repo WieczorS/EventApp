@@ -4,8 +4,7 @@ using EventApp1.Models;
 using NpgsqlTypes;
 using interfaces;
 using Npgsql;
-using System.Security.Cryptography;
-using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+
 
 namespace EventApp1.Repositories;
 
@@ -36,6 +35,7 @@ public class UserRepository:IUserService
     async Task<User> IUserService.GetUserAsync(string username)
     {
         var r = new User();
+        
         await using (var cmd = new NpgsqlCommand(
                          @"select * from users
                                     where login = @login;", _conn))
@@ -45,6 +45,7 @@ public class UserRepository:IUserService
             {
                 if (dr.Read())
                 {
+                    
                     r.Id = (int)(dr["id"]);
                     r.name = (dr["name"]) as string;
                     r.surname = (dr["surname"]) as string;

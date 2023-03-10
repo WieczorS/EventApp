@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "dkNiQGB3cN3qKObPnonnO0qKLaOYARrbY4gi1VfRh8t8FMCH2++vE4EJZ+chveDWhrB37H/4dPk8Xgdt3Ras7w==",
+  "dgSpecHash": "uDHRnPT70CoIGLhxw+r0Jq7kTgedN+b2XB+PsZJ5BLjm1e2Tgkr8TKoJCEj02hnAQ0t90p4b8aQoygls4K3jYg==",
   "success": true,
-  "projectFilePath": "/home/halfbit/RiderProjects/EventApp/Interfaces/Interfaces.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/kuba/RiderProjects/eventApp/Interfaces/Interfaces.csproj",
+  "expectedPackageFiles": [
+    "/Users/kuba/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.0/microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",
+    "/Users/kuba/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/Users/kuba/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.10.0/microsoft.identitymodel.jsonwebtokens.6.10.0.nupkg.sha512",
+    "/Users/kuba/.nuget/packages/microsoft.identitymodel.logging/6.10.0/microsoft.identitymodel.logging.6.10.0.nupkg.sha512",
+    "/Users/kuba/.nuget/packages/microsoft.identitymodel.protocols/6.10.0/microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
+    "/Users/kuba/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/6.10.0/microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
+    "/Users/kuba/.nuget/packages/microsoft.identitymodel.tokens/6.10.0/microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
+    "/Users/kuba/.nuget/packages/system.identitymodel.tokens.jwt/6.10.0/system.identitymodel.tokens.jwt.6.10.0.nupkg.sha512",
+    "/Users/kuba/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

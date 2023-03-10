@@ -1,0 +1,30 @@
+//marker dodawanie tokenu jwt
+
+    // public string GenerateNewToken(JwtConfig _config)
+    // {
+    //     var mySecret = _config.Key;
+    //     var mySecurityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(mySecret));
+    //     var myIssuer = _config.Issuer;
+    //     var myAudience = _config.Audience;
+    //     var tokenHandler = new JwtSecurityTokenHandler();
+    //     var tokenDescriptor = new SecurityTokenDescriptor
+    //     {
+    //         Subject = new ClaimsIdentity(new Claim[]
+    //         {
+    //             new Claim(ClaimTypes.NameIdentifier, 1.ToString()),
+    //         }),
+    //         Expires = _config.,
+    //         Issuer = myIssuer,
+    //         Audience = myAudience,
+    //         SigningCredentials = new SigningCredentials(mySecurityKey, SecurityAlgorithms.HmacSha256Signature)
+    //
+    //
+    //     };
+    //     var token = tokenHandler.CreateToken(tokenDescriptor);
+    //
+    //
+    //
+    //     return tokenHandler.WriteToken(token);
+    // }
+
+    

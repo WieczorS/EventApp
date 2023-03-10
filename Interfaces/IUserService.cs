@@ -1,5 +1,6 @@
 using EventApp1.Models;
 
+
 namespace interfaces;
 
 public interface IUserService

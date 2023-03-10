@@ -38,6 +38,9 @@ builder.Services.AddTransient<NpgsqlConnection>((sp) => new NpgsqlConnection(con
 builder.Services.AddTransient<IEventRepository, EventRepository>(); //dodanie repozytorium do konternera DI
 builder.Services.AddTransient<IUserService, UserRepository>(); //dodanie repozytorium do konternera DI
 builder.Services.AddTransient<IPasswordServices, PasswordServices>(); //dodanie repozytorium do konternera DI
+builder.Services.AddTransient<ITokenService, JwtTokenService >(); //dodanie repozytorium do konternera DI
+
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -54,6 +57,9 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.Key))
     };
+});
+
+builder.Services.AddLogging(loggingBuilder => {
 });
 builder.Services.AddAuthorization();
 

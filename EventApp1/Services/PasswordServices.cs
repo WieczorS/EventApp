@@ -6,7 +6,6 @@ namespace EventApp1.Services;
 
 public class PasswordServices:IPasswordServices
 {
-    private IPasswordServices _passwordServicesImplementation;
 
     public byte[] GenerateRandomSalt()
     {
