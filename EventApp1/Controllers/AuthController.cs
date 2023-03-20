@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using EventApp1.Models;
 using interfaces;
+using Serilog;
+using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace EventApp1.Controllers;
 
@@ -41,6 +43,8 @@ public class AuthController : Controller
         var userPwd = _passwordServices.HashPassword(Convert.FromBase64String(user.passwordSalt), request.Password);
         if (user.password != userPwd)
         {
+            var log = new LoggerConfiguration();
+                
             _logger.LogInformation("Returned unauthorized{request}",request);
             return Unauthorized();
         }

@@ -28,3 +28,26 @@
     // }
 
     
+"Serilog": {
+    "MinimumLevel": {
+      "Default": "Debug",
+      "Override": {
+        "Microsoft": "Information",
+        "System": "Warning",
+        "System.Net.Http.HttpClient": "Information"
+      }
+    }
+  },
+  
+  serilog od marcina
+    "Serilog": {
+      "Using": [ "Serilog.Sinks.Elasticsearch" ],
+      "MinimumLevel": "Warning",
+      "WriteTo": [
+        {
+          "Name": "Elasticsearch",
+          "Args": {
+            "nodeUris": "http://localhost:9200"
+          }
+        }
+      ],

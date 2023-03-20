@@ -1,25 +1,62 @@
-using System.Data;
+
+using System.Reflection;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using Blazored.LocalStorage;
 using EventApp1.Config;
 using EventApp1.Repositories;
 using EventApp1.Services;
+
 using interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Npgsql;
-
+using Serilog;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
+using Serilog.Exceptions;
+using Serilog.Sinks.Elasticsearch;
 
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
 var connStrings = builder.Configuration.GetSection("connectionStrings").Get<DbO>();     //building connection to DB
 var jwtSettings = builder.Configuration.GetSection("Jwt").Get<JwtConfig>();
 
+
+
+//serilog moze zadziala
+
+
+
+// Add services to the container.
+
+// connStrings = builder.Configuration.GetSection("connectionStrings").Get<DbO>();
+// jwtSettings = builder.Configuration.GetSection("Jwt").Get<JwtConfig>();
+
+ConfigureLogging();
+builder.Host.UseSerilog();
+
+builder.Services.AddHttpLogging(logging =>
+{
+    logging.LoggingFields = HttpLoggingFields.All;
+    logging.RequestBodyLogLimit = 4096;
+    logging.ResponseBodyLogLimit = 4096;
+
+});
+// builder.Services.AddBlazoredLocalStorage(config =>
+// {
+//     config.JsonSerializerOptions.DictionaryKeyPolicy = JsonNamingPolicy.CamelCase;
+//     config.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+//     config.JsonSerializerOptions.IgnoreReadOnlyProperties = true;
+//     config.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+//     config.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+//     config.JsonSerializerOptions.ReadCommentHandling = JsonCommentHandling.Skip;
+//     config.JsonSerializerOptions.WriteIndented = false;
+// });
 
 builder.Services.AddControllers();
 builder.Services.Configure<JwtConfig>(builder.Configuration.GetSection("Jwt"));
@@ -59,9 +96,10 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddLogging(loggingBuilder => {
-});
+// builder.Services.AddLogging(loggingBuilder => {
+// });
 builder.Services.AddAuthorization();
+
 
 
 var app = builder.Build();
@@ -76,10 +114,42 @@ if (app.Environment.IsDevelopment())
 //app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseHttpLogging();
 
 
 
 app.MapControllers();
 
 app.Run();
+
+#region elastic
+void ConfigureLogging()
+{
+    var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+    var configuration = new ConfigurationBuilder()
+        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+        .AddJsonFile(
+            $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json",
+            optional: true)
+        .Build();
+
+    Log.Logger = new LoggerConfiguration()
+        .Enrich.FromLogContext()
+        .Enrich.WithExceptionDetails()
+        .WriteTo.Debug()
+        .WriteTo.Console()
+        .WriteTo.Elasticsearch(ConfigureElasticSink(configuration, environment))
+        .Enrich.WithProperty("Environment", environment)
+        .ReadFrom.Configuration(configuration)
+        .CreateLogger();
+}
+
+ElasticsearchSinkOptions ConfigureElasticSink(IConfigurationRoot configuration, string environment)
+{
+    return new ElasticsearchSinkOptions(new Uri(configuration["ElasticConfiguration:Uri"]))
+    {
+        AutoRegisterTemplate = true,
+        IndexFormat = $"{Assembly.GetExecutingAssembly().GetName().Name.ToLower().Replace(".", "-")}-{environment?.ToLower().Replace(".", "-")}-{DateTime.UtcNow:yyyy-MM}"
+    };
+}
+#endregion

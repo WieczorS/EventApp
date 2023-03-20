@@ -1,0 +1,57 @@
+
+
+@page "/login"
+@using System.Net
+
+<h1>Logowanie</h1>
+
+@if (!string.IsNullOrEmpty(ErrorMessage))
+{
+    <div class="alert alert-danger" role="alert">@ErrorMessage</div>
+}
+
+<form onsubmit=@HandleSubmit()>
+    <div class="form-group">
+        <label for="username">Nazwa użytkownika:</label>
+        <input type="text" class="form-control" id="username" @bind-value="@Username" />
+    </div>
+    <div class="form-group">
+        <label for="password">Hasło:</label>
+        <input type="password" class="form-control" id="password" @bind-value="@Password" />
+    </div>
+     <button type="submit" class="btn btn-primary" @onclick="HandleSubmit">Zaloguj się</button> 
+</form>
+@inject HttpClient HttpClient
+@code {
+    private string Username { get; set; }
+    private string Password { get; set; }
+    private string ErrorMessage { get; set; }
+
+    public async Task HandleSubmit()
+    {
+        try
+        {
+    // Wywołaj REST API, aby uwierzytelnić użytkownika
+            var data = new { MUsername = Username, MPassword = Password };
+            var result = await HttpClient.PostAsJsonAsync("EventApp1/Auth",data);
+    
+            if (result.IsSuccessStatusCode)
+            {
+    // Przekieruj użytkownika na stronę główną po pomyślnym uwierzytelnieniu
+                
+                Console.WriteLine("udalo sie zalogowac",result);
+                result.EnsureSuccessStatusCode();
+              
+            }
+            else
+            {
+                Console.WriteLine("zle haselko");
+                ErrorMessage = "Nieprawidłowa nazwa użytkownika lub hasło";
+            }
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Wystąpił błąd podczas logowania: {ex.Message}";
+        }
+    }
+}

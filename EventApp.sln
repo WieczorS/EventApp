@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "models", "models\models.csproj", "{00B6A2C1-BACF-4F38-A959-8B5A7DC3569A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{4FA388AD-E759-4781-86BE-1DA3FA65B7BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{00B6A2C1-BACF-4F38-A959-8B5A7DC3569A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00B6A2C1-BACF-4F38-A959-8B5A7DC3569A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00B6A2C1-BACF-4F38-A959-8B5A7DC3569A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FA388AD-E759-4781-86BE-1DA3FA65B7BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FA388AD-E759-4781-86BE-1DA3FA65B7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FA388AD-E759-4781-86BE-1DA3FA65B7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FA388AD-E759-4781-86BE-1DA3FA65B7BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
