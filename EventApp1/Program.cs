@@ -95,6 +95,17 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.Key))
     };
 });
+var r = "origins";
+builder.Services.AddCors((options =>
+{
+    options.AddPolicy(r,
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:9999")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});)
 
 // builder.Services.AddLogging(loggingBuilder => {
 // });

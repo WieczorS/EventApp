@@ -59,6 +59,40 @@ public class UserRepository:IUserService
 
         return r;
     }
+    
+    async Task<User> IUserService.GetUserByEmailAsync(string email)
+    {
+        var r = new User();
+        
+        await using (var cmd = new NpgsqlCommand(
+                         @"select * from users
+                                    where email = @email;", _conn))
+        {
+            cmd.Parameters.AddWithValue("login", email);
+            using (var dr = await cmd.ExecuteReaderAsync())
+            {
+                if (dr.Read())
+                {
+                    
+                    r.Id = (int)(dr["id"]);
+                    r.name = (dr["name"]) as string;
+                    r.surname = (dr["surname"]) as string;
+                    r.email = (dr["email"]) as string;
+                    r.login = (dr["login"]) as string;
+                    r.password = (dr["password"]) as string;
+                    r.passwordSalt = (dr["password_salt"]) as string;
+                }
+            }
+        }
+
+        return r;
+    }
+
+    public Task CreatePasswordResetToken(int userId, string token)
+    {
+        //todo napisac dodatanie tokenu
+        throw new NotImplementedException();
+    }
 
     public async Task AddUserAsync(UserAddDto user)
     {

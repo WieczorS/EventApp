@@ -31,6 +31,7 @@ public class AuthController : Controller
     [HttpPost]
     public async Task<IActionResult> AuthenticateAsync([FromBody] AuthRequest request)
     {
+        
         _logger.LogDebug("Debug test");
         _logger.LogInformation("Info test");
 

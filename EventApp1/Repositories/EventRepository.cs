@@ -1,6 +1,7 @@
 using System.Data;
 using interfaces;
 using EventApp1.Models;
+using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 
 namespace EventApp1.Repositories;
@@ -37,6 +38,7 @@ public class EventRepository:IEventRepository
                          _conn))
 
         {
+            
             if (eventToCreate.Name != null) cmd.Parameters.AddWithValue("Name", eventToCreate.Name);
             if (eventToCreate.Description != null)
                 cmd.Parameters.AddWithValue("Description", eventToCreate.Description);
@@ -116,4 +118,6 @@ public class EventRepository:IEventRepository
             return await cmd.ExecuteNonQueryAsync();
         }
     }
+
+   
 }

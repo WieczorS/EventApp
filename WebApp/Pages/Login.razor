@@ -33,7 +33,7 @@
         {
     // Wywołaj REST API, aby uwierzytelnić użytkownika
             var data = new { MUsername = Username, MPassword = Password };
-            var result = await HttpClient.PostAsJsonAsync("EventApp1/Auth",data);
+            var result = await HttpClient.PostAsJsonAsync("http://localhost:5175/Auth",data);
     
             if (result.IsSuccessStatusCode)
             {
