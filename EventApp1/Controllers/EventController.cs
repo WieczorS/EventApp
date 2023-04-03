@@ -26,6 +26,16 @@ namespace EventApp1.Controllers
             return await _repository.GetEventByIdAsync(n);
             
         }
+        
+        [HttpGet("all")]
+        public async Task<List<Event>> GetAllEventsAsync()
+        {
+            
+            return await _repository.GetAllEventsAsync();
+            
+        }
+
+
         /// <summary>
         /// Creates an Event.
         /// </summary>

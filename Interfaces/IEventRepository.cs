@@ -11,5 +11,5 @@ public interface IEventRepository
     Task<int> DeleteEventAsync(int eventToDelete);
 
 
-
+    Task<List<Event>> GetAllEventsAsync();
 }

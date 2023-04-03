@@ -1,57 +1,75 @@
 
 
 @page "/login"
-@using System.Net
+@using Hanssens.Net
+
+
 
 <h1>Logowanie</h1>
 
-@if (!string.IsNullOrEmpty(ErrorMessage))
-{
-    <div class="alert alert-danger" role="alert">@ErrorMessage</div>
-}
+@* @if (!string.IsNullOrEmpty(ErrorMessage)) *@
+@* { *@
+@*     <div class="alert alert-danger" role="alert">@ErrorMessage</div> *@
+@* } *@
 
-<form onsubmit=@HandleSubmit()>
-    <div class="form-group">
-        <label for="username">Nazwa użytkownika:</label>
-        <input type="text" class="form-control" id="username" @bind-value="@Username" />
-    </div>
-    <div class="form-group">
-        <label for="password">Hasło:</label>
-        <input type="password" class="form-control" id="password" @bind-value="@Password" />
-    </div>
-     <button type="submit" class="btn btn-primary" @onclick="HandleSubmit">Zaloguj się</button> 
-</form>
+@* <form onsubmit=@HandleSubmit()> *@
+@*     <div class="form-group"> *@
+@*         <label for="username">Nazwa użytkownika:</label> *@
+@*         <input type="text" class="form-control" id="username" @bind-value="@Username" /> *@
+@*     </div> *@
+@*     <div class="form-group"> *@
+@*         <label for="password">Hasło:</label> *@
+@*         <input type="password" class="form-control" id="password" @bind-value="@Password" /> *@
+@*     </div> *@
+@*      <button type="submit" class="btn btn-primary" @onclick="HandleSubmit">Zaloguj się</button>  *@
+@* </form> *@
+
+
+   <RadzenStack Gap="0" Class="rz-my-12 rz-mx-auto rz-border-radius-6 rz-shadow-10" Style="width: 100%; max-width: 400px; overflow: hidden;">
+       <RadzenCard Class="rz-shadow-0 rz-border-radius-0 rz-background-color-info rz-p-12" style="text-align: center;">
+           <RadzenText TextStyle="TextStyle.DisplayH3" TagName="TagName.H2" Class="rz-color-white rz-mb-0">WebApp</RadzenText>
+       </RadzenCard>
+       <RadzenCard Class="rz-shadow-0 rz-p-12">
+           <RadzenLogin  AllowRegister="false" AllowResetPassword="false"  Login=@(args => HandleSubmit(args)) />
+       </RadzenCard>
+   </RadzenStack>
+
 @inject HttpClient HttpClient
 @code {
-    private string Username { get; set; }
-    private string Password { get; set; }
-    private string ErrorMessage { get; set; }
 
-    public async Task HandleSubmit()
+    public class UserLogin
+    {
+        private string Username { get; set; }
+        private string Password { get; set; }
+        private string ErrorMessage { get; set; }
+    }
+
+
+
+
+    public async void HandleSubmit(LoginArgs args)
     {
         try
         {
     // Wywołaj REST API, aby uwierzytelnić użytkownika
-            var data = new { MUsername = Username, MPassword = Password };
-            var result = await HttpClient.PostAsJsonAsync("http://localhost:5175/Auth",data);
-    
-            if (result.IsSuccessStatusCode)
+            var result = await HttpClient.PostAsJsonAsync("http://localhost:5175/Auth", new
             {
-    // Przekieruj użytkownika na stronę główną po pomyślnym uwierzytelnieniu
-                
-                Console.WriteLine("udalo sie zalogowac",result);
-                result.EnsureSuccessStatusCode();
-              
-            }
-            else
-            {
-                Console.WriteLine("zle haselko");
-                ErrorMessage = "Nieprawidłowa nazwa użytkownika lub hasło";
-            }
+                Login = args.Username,
+                Password = args.Password
+            });
+            var storage = new LocalStorage();
+            var token = await result.Content.ReadAsStringAsync();
+            storage.Store("userToken",token);
+            var readToken = storage.Get("userToken");
+            Console.WriteLine(readToken);
+            result.EnsureSuccessStatusCode();
+
         }
         catch (Exception ex)
         {
-            ErrorMessage = $"Wystąpił błąd podczas logowania: {ex.Message}";
+            Console.WriteLine($"Wystąpił błąd podczas logowania: {ex.Message}");
+
         }
     }
+
 }

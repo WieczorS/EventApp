@@ -9,5 +9,8 @@ public interface IUserService
     Task<User> GetUserAsync(string username);
     Task AddUserAsync(UserAddDto user);
     Task<User> GetUserByEmailAsync(string email);
-    Task CreatePasswordResetToken(int userId, string token);
+
+    Task CreatePasswordResetToken(int userId);
+    Task<SetNewPasswordDto> GetUserByTokenAsync(string token);
+  
 }

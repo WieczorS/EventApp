@@ -76,6 +76,7 @@ builder.Services.AddTransient<IEventRepository, EventRepository>(); //dodanie re
 builder.Services.AddTransient<IUserService, UserRepository>(); //dodanie repozytorium do konternera DI
 builder.Services.AddTransient<IPasswordServices, PasswordServices>(); //dodanie repozytorium do konternera DI
 builder.Services.AddTransient<ITokenService, JwtTokenService >(); //dodanie repozytorium do konternera DI
+builder.Services.AddTransient<IPasswordResetService, PasswordRepository >(); //dodanie repozytorium do konternera DI
 
 
 builder.Services.AddAuthentication(options =>
@@ -95,26 +96,28 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.Key))
     };
 });
-var r = "origins";
-builder.Services.AddCors((options =>
-{
-    options.AddPolicy(r,
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:9999")
-                .AllowAnyHeader()
-                .AllowAnyMethod();
-        });
-});)
+// var r = "origins";
+// builder.Services.AddCors((options =>
+// {
+//     options.AddPolicy(r,
+//         policy =>
+//         {
+//             policy.WithOrigins("http://localhost:9999")
+//                 .AllowAnyHeader()
+//                 .AllowAnyMethod();
+//         });
+// });)
 
-// builder.Services.AddLogging(loggingBuilder => {
-// });
+
 builder.Services.AddAuthorization();
-
+builder.Services.AddHttpClient();
 
 
 var app = builder.Build();
-
+app.UseCors(b =>
+{
+    b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+});
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

@@ -2,6 +2,7 @@ using System.Data;
 using interfaces;
 using EventApp1.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Diagnostics;
 using Npgsql;
 
 namespace EventApp1.Repositories;
@@ -82,6 +83,34 @@ public class EventRepository:IEventRepository
 
             return returningEvent;
         }
+    }
+    public async Task<List<Event>> GetAllEventsAsync()
+    {
+        var list = new List<Event>();
+        if (_conn.State != ConnectionState.Open)
+        {
+            _conn.Open();
+        }
+
+        await using (var cmd = new NpgsqlCommand("SELECT id, name,description, start_date, end_date FROM events;", _conn))
+        {
+             await using (var reader = await cmd.ExecuteReaderAsync())
+            {
+                while (await reader.ReadAsync())
+                {
+                    var n = new Event();
+                    n.Id = (int)reader["id"];
+                    n.Name = (reader["name"]) as string;
+                    n.Description = (reader["description"]) as string;
+                    n.StartDate = reader["start_date"] as DateTime? ?? default;
+                    n.EndDate = reader["end_date"] as DateTime? ?? default;
+    
+                    list.Add(n);
+                }
+            }
+        }
+
+        return list;
     }
     
     //UPDATE

@@ -1,0 +1,54 @@
+@page "/listevents"
+
+@using Radzen.Blazor
+@inject HttpClient HttpClient
+
+
+<h1>Lista wydarzeń</h1>
+
+@if (events == null)
+{
+    <p>Ładowanie...</p>
+}
+else if (events.Count == 0)
+{
+    <p>Brak wydarzeń.</p>
+}
+else
+{
+    <RadzenCard>
+        <RadzenCardHeader>
+            <h3>Wydarzenia</h3>
+        </RadzenCardHeader>
+        <RadzenCard>
+            <RadzenCardHeader>
+                <h4>Lista</h4>
+            </RadzenCardHeader>
+            <RadzenCard>
+                <RadzenGrid Data="@events">
+                    <RadzenGridColumn TItem="Event" Property="Name" Title="Tytuł" />
+                    <RadzenGridColumn TItem="Event" Property="Description" Title="Data" />
+                    <RadzenGridColumn TItem="Event" Property="Id" Title="Lokalizacja" />
+                </RadzenGrid>
+            </RadzenCard>
+        </RadzenCard>
+    </RadzenCard>
+}
+
+@code {
+    private List<Event> events;
+
+    protected override async Task OnInitializedAsync()
+    {
+        events = await HttpClient.GetFromJsonAsync<List<Event>>("http://localhost:5175/Event/all");
+    }
+
+    private class Event
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public string? Description { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+    }
+}
