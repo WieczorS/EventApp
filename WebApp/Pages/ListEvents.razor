@@ -1,7 +1,11 @@
 @page "/listevents"
 
 @using Radzen.Blazor
+@using EventApp1.Models
+@using System.Data.SqlTypes
+@using Blazored.LocalStorage
 @inject HttpClient HttpClient
+@inject ILocalStorageService _LocalStorage
 
 
 <h1>Lista wydarzeń</h1>
@@ -25,11 +29,13 @@ else
                 <h4>Lista</h4>
             </RadzenCardHeader>
             <RadzenCard>
-                <RadzenGrid Data="@events">
-                    <RadzenGridColumn TItem="Event" Property="Name" Title="Tytuł" />
-                    <RadzenGridColumn TItem="Event" Property="Description" Title="Data" />
-                    <RadzenGridColumn TItem="Event" Property="Id" Title="Lokalizacja" />
-                </RadzenGrid>
+                <RadzenDataGrid TItem="Event" Data="@events" PageSize="10">
+                    <Columns>
+                    <RadzenDataGridColumn TItem="Event" Property="Name" Title="Tytuł"/>
+                    <RadzenDataGridColumn TItem="Event" Property="Description" Title="Data"/>
+                    <RadzenDataGridColumn TItem="Event" Property="Location" Title="Lokalizacja"/>
+                    </Columns>
+                </RadzenDataGrid>
             </RadzenCard>
         </RadzenCard>
     </RadzenCard>
@@ -40,15 +46,10 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        var token = (await _LocalStorage.GetItemAsStringAsync("userToken")).Replace("\"", "");
+        HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
         events = await HttpClient.GetFromJsonAsync<List<Event>>("http://localhost:5175/Event/all");
     }
 
-    private class Event
-    {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Description { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-    }
+  
 }

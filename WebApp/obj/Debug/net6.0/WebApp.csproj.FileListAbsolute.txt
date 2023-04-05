@@ -897,3 +897,15 @@
 /Users/kuba/RiderProjects/eventApp/WebApp/obj/Debug/net6.0/build-gz/+bJsQZns.gz
 /Users/kuba/RiderProjects/eventApp/WebApp/obj/Debug/net6.0/build-gz/sw9ZQZjM.gz
 /Users/kuba/RiderProjects/eventApp/WebApp/obj/Debug/net6.0/build-gz/Y33QPKdZ.gz
+/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/models.dll
+/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/models.pdb
+/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/models.pdb.gz
+/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/models.dll.gz
+/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/models.dll
+/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/models.pdb
+/Users/kuba/RiderProjects/eventApp/WebApp/obj/Debug/net6.0/build-gz/NdvVa2rc.gz
+/Users/kuba/RiderProjects/eventApp/WebApp/obj/Debug/net6.0/build-gz/gCWuVNrX.gz
+/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/Blazored.LocalStorage.dll
+/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/Blazored.LocalStorage.dll.gz
+/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/Blazored.LocalStorage.dll
+/Users/kuba/RiderProjects/eventApp/WebApp/obj/Debug/net6.0/build-gz/S+aGASk9.gz

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "yJVAo90WB+QJDNJok/7VqPASA16IsfHzx8N1ulb/HihkjnHPbnynw5TpmDP5HcxC/f+2Jw1hO3OWvFSFpyjy9w==",
+  "dgSpecHash": "S3SVdGYl5GYZsOGca3kL4G0kbsLGt2ExtKm/9AZarUdiwEeBEKaZ5/XhEcD3kwgyCKmoMS0YxC0xD9T8aoNSAQ==",
   "success": true,
   "projectFilePath": "/Users/kuba/RiderProjects/eventApp/WebApp/WebApp.csproj",
   "expectedPackageFiles": [
+    "/Users/kuba/.nuget/packages/blazored.localstorage/4.3.0/blazored.localstorage.4.3.0.nupkg.sha512",
     "/Users/kuba/.nuget/packages/libsassbuilder/2.0.1/libsassbuilder.2.0.1.nupkg.sha512",
     "/Users/kuba/.nuget/packages/localstorage/2.1.0/localstorage.2.1.0.nupkg.sha512",
     "/Users/kuba/.nuget/packages/microsoft.aspnetcore.authorization/6.0.14/microsoft.aspnetcore.authorization.6.0.14.nupkg.sha512",

@@ -92,7 +92,10 @@ public class EventRepository:IEventRepository
             _conn.Open();
         }
 
-        await using (var cmd = new NpgsqlCommand("SELECT id, name,description, start_date, end_date FROM events;", _conn))
+        await using (var cmd = new NpgsqlCommand(@"    SELECT ev.id, ev.name, ev.description, ev.start_date, ev.end_date,loc.city
+                                                                FROM events ev
+                                                                JOIN locations loc
+                                                                ON ev.location_id = loc.id;", _conn))
         {
              await using (var reader = await cmd.ExecuteReaderAsync())
             {
@@ -100,10 +103,11 @@ public class EventRepository:IEventRepository
                 {
                     var n = new Event();
                     n.Id = (int)reader["id"];
-                    n.Name = (reader["name"]) as string;
-                    n.Description = (reader["description"]) as string;
+                    n.Name = (reader["name"]) as string ?? default;
+                    n.Description = (reader["description"]) as string ?? default;
                     n.StartDate = reader["start_date"] as DateTime? ?? default;
                     n.EndDate = reader["end_date"] as DateTime? ?? default;
+                    n.Location = reader["city"]as string ?? default;
     
                     list.Add(n);
                 }

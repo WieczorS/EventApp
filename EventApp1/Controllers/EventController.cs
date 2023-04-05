@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EventApp1.Controllers
 {
     [ApiController]
-    //[Authorize]
+    [Authorize]
     [Route("[controller]")]
 
     public class EventController : Controller

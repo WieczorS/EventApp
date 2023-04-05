@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LxKww7OEc05eB0AFRM8mwjKZARAzSxZb7oj/Iz3Fv8E=",
+  "Hash": "O+kZe3B1vHv9Gp0xH+1q0zaNWeQabkO0ZVTZpFaOAcg=",
   "Source": "WebApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -3162,6 +3162,23 @@
       "OriginalItemSpec": "/Users/kuba/.nuget/packages/microsoft.aspnetcore.components.webassembly/6.0.14/build/net6.0/blazor.webassembly.js"
     },
     {
+      "Identity": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/Blazored.LocalStorage.dll",
+      "SourceId": "WebApp",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/kuba/.nuget/packages/blazored.localstorage/4.3.0/lib/net6.0/Blazored.LocalStorage.dll"
+    },
+    {
       "Identity": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/dotnet.6.0.14.rbk0qrvqs7.js",
       "SourceId": "WebApp",
       "SourceType": "Computed",
@@ -3755,6 +3772,40 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/kuba/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/6.0.14/runtimes/browser-wasm/lib/net6.0/Microsoft.Win32.Registry.dll"
+    },
+    {
+      "Identity": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/models.dll",
+      "SourceId": "WebApp",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/models.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/kuba/RiderProjects/eventApp/models/bin/Debug/net6.0/models.dll"
+    },
+    {
+      "Identity": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/models.pdb",
+      "SourceId": "WebApp",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/models.pdb",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "symbol",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/kuba/RiderProjects/eventApp/models/bin/Debug/net6.0/models.pdb"
     },
     {
       "Identity": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/mscorlib.dll",
@@ -8330,6 +8381,23 @@
       "OriginalItemSpec": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/System.Reflection.DispatchProxy.dll"
     },
     {
+      "Identity": "/Users/kuba/RiderProjects/eventApp/WebApp/obj/Debug/net6.0/build-gz/gCWuVNrX.gz",
+      "SourceId": "WebApp",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/models.pdb.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/models.pdb",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/models.pdb"
+    },
+    {
       "Identity": "/Users/kuba/RiderProjects/eventApp/WebApp/obj/Debug/net6.0/build-gz/hGUf4LDS.gz",
       "SourceId": "WebApp",
       "SourceType": "Computed",
@@ -9078,6 +9146,23 @@
       "OriginalItemSpec": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/System.Collections.Immutable.dll"
     },
     {
+      "Identity": "/Users/kuba/RiderProjects/eventApp/WebApp/obj/Debug/net6.0/build-gz/NdvVa2rc.gz",
+      "SourceId": "WebApp",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/models.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/models.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/models.dll"
+    },
+    {
       "Identity": "/Users/kuba/RiderProjects/eventApp/WebApp/obj/Debug/net6.0/build-gz/NLBz3+h+.gz",
       "SourceId": "WebApp",
       "SourceType": "Computed",
@@ -9620,6 +9705,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/System.AppContext.dll"
+    },
+    {
+      "Identity": "/Users/kuba/RiderProjects/eventApp/WebApp/obj/Debug/net6.0/build-gz/S+aGASk9.gz",
+      "SourceId": "WebApp",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/Blazored.LocalStorage.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/kuba/RiderProjects/eventApp/WebApp/bin/Debug/net6.0/wwwroot/_framework/Blazored.LocalStorage.dll"
     },
     {
       "Identity": "/Users/kuba/RiderProjects/eventApp/WebApp/obj/Debug/net6.0/build-gz/S+z6Q0U4.gz",

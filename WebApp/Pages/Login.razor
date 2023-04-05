@@ -2,6 +2,8 @@
 
 @page "/login"
 @using Hanssens.Net
+@using Blazored.LocalStorage
+@inject ILocalStorageService _LocalStorage
 
 
 
@@ -35,6 +37,7 @@
    </RadzenStack>
 
 @inject HttpClient HttpClient
+
 @code {
 
     public class UserLogin
@@ -57,13 +60,11 @@
                 Login = args.Username,
                 Password = args.Password
             });
-            var storage = new LocalStorage();
-            var token = await result.Content.ReadAsStringAsync();
-            storage.Store("userToken",token);
-            var readToken = storage.Get("userToken");
-            Console.WriteLine(readToken);
             result.EnsureSuccessStatusCode();
-
+            
+            var token = await result.Content.ReadAsStringAsync();
+            await _LocalStorage.SetItemAsync("userToken",token);
+            
         }
         catch (Exception ex)
         {
