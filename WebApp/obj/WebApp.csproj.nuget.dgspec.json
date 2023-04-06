@@ -99,9 +99,21 @@
               "target": "Package",
               "version": "[4.3.0, )"
             },
+            "Blazorise": {
+              "target": "Package",
+              "version": "[1.2.2, )"
+            },
+            "Blazorise.Bootstrap": {
+              "target": "Package",
+              "version": "[1.2.2, )"
+            },
             "LocalStorage": {
               "target": "Package",
               "version": "[2.1.0, )"
+            },
+            "Microsoft.AspNetCore.Components.Authorization": {
+              "target": "Package",
+              "version": "[6.0.15, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
@@ -111,6 +123,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.14, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Radzen.Blazor": {
               "target": "Package",

@@ -1,0 +1,29 @@
+@page "/Test"
+@inject NavigationManager NavigationManager
+@inject NotificationService NotificationService
+<h3>Test</h3>
+
+<RadzenStack Gap="0" Class="rz-my-12 rz-mx-auto rz-border-radius-6 rz-shadow-10" Style="width: 100%; max-width: 400px; overflow: hidden;">
+    <RadzenCard Class="rz-shadow-0 rz-border-radius-0 rz-background-color-info rz-p-12" style="text-align: center;">
+        <RadzenText TextStyle="TextStyle.DisplayH3" TagName="TagName.H2" Class="rz-color-white rz-mb-0">WebApp</RadzenText>
+    </RadzenCard>
+    <RadzenCard Class="rz-shadow-0 rz-p-12">
+        <form onsubmit="@HandleSubmit">
+            <RadzenLogin AllowRegister="false" AllowResetPassword="false" Login=@(args => HandleSubmit(args)) />
+        </form>
+    </RadzenCard>
+</RadzenStack>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        NotificationService.Notify(
+            new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Błędne hasło lub login!", Duration = 6000 });
+    }
+    private async Task HandleSubmit(LoginArgs args)
+    {
+        NotificationService.Notify(
+            new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Błędne hasło lub login!", Duration = 6000 });
+    }
+    
+}

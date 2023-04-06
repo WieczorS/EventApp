@@ -14,6 +14,61 @@
           "lib/net6.0/Blazored.LocalStorage.dll": {}
         }
       },
+      "Blazorise/1.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise.Licensing": "1.1.0",
+          "Microsoft.AspNetCore.Components": "6.0.15",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.3"
+        },
+        "compile": {
+          "lib/net6.0/Blazorise.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Blazorise.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Blazorise.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.props": {}
+        }
+      },
+      "Blazorise.Bootstrap/1.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.2",
+          "Microsoft.AspNetCore.Components": "6.0.15",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.3"
+        },
+        "compile": {
+          "lib/net6.0/Blazorise.Bootstrap.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Blazorise.Bootstrap.dll": {}
+        },
+        "build": {
+          "buildTransitive/Blazorise.Bootstrap.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.Bootstrap.props": {}
+        }
+      },
+      "Blazorise.Licensing/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Blazorise.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Blazorise.Licensing.dll": {}
+        }
+      },
       "LibSassBuilder/2.0.1": {
         "type": "package",
         "build": {
@@ -32,10 +87,10 @@
           "lib/netstandard2.0/LocalStorage.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authorization/6.0.14": {
+      "Microsoft.AspNetCore.Authorization/6.0.15": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Metadata": "6.0.14",
+          "Microsoft.AspNetCore.Metadata": "6.0.15",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.3",
           "Microsoft.Extensions.Options": "6.0.0"
         },
@@ -50,11 +105,11 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components/6.0.14": {
+      "Microsoft.AspNetCore.Components/6.0.15": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Authorization": "6.0.14",
-          "Microsoft.AspNetCore.Components.Analyzers": "6.0.14"
+          "Microsoft.AspNetCore.Authorization": "6.0.15",
+          "Microsoft.AspNetCore.Components.Analyzers": "6.0.15"
         },
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Components.dll": {
@@ -67,16 +122,33 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Analyzers/6.0.14": {
+      "Microsoft.AspNetCore.Components.Analyzers/6.0.15": {
         "type": "package",
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets": {}
         }
       },
-      "Microsoft.AspNetCore.Components.Forms/6.0.14": {
+      "Microsoft.AspNetCore.Components.Authorization/6.0.15": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "6.0.14"
+          "Microsoft.AspNetCore.Authorization": "6.0.15",
+          "Microsoft.AspNetCore.Components": "6.0.15"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Components.Authorization.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Components.Authorization.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Components.Forms/6.0.15": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "6.0.15"
         },
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Components.Forms.dll": {
@@ -89,13 +161,13 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Web/6.0.14": {
+      "Microsoft.AspNetCore.Components.Web/6.0.15": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "6.0.14",
-          "Microsoft.AspNetCore.Components.Forms": "6.0.14",
+          "Microsoft.AspNetCore.Components": "6.0.15",
+          "Microsoft.AspNetCore.Components.Forms": "6.0.15",
           "Microsoft.Extensions.DependencyInjection": "6.0.1",
-          "Microsoft.JSInterop": "6.0.14",
+          "Microsoft.JSInterop": "6.0.15",
           "System.IO.Pipelines": "6.0.3"
         },
         "compile": {
@@ -138,7 +210,7 @@
           "build/Microsoft.AspNetCore.Components.WebAssembly.DevServer.targets": {}
         }
       },
-      "Microsoft.AspNetCore.Metadata/6.0.14": {
+      "Microsoft.AspNetCore.Metadata/6.0.15": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Metadata.dll": {
@@ -249,11 +321,10 @@
           }
         }
       },
-      "Microsoft.Extensions.DependencyInjection/6.0.1": {
+      "Microsoft.Extensions.DependencyInjection/7.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
         },
         "compile": {
           "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
@@ -266,10 +337,10 @@
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
@@ -282,7 +353,7 @@
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Microsoft.Extensions.FileProviders.Abstractions/6.0.0": {
@@ -341,27 +412,51 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Extensions.Logging/6.0.0": {
+      "Microsoft.Extensions.Http/7.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
-          "Microsoft.Extensions.Options": "6.0.0",
-          "System.Diagnostics.DiagnosticSource": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Options": "7.0.0"
         },
         "compile": {
-          "lib/netstandard2.1/Microsoft.Extensions.Logging.dll": {
+          "lib/net6.0/Microsoft.Extensions.Http.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.1/Microsoft.Extensions.Logging.dll": {
+          "lib/net6.0/Microsoft.Extensions.Http.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/6.0.3": {
+      "Microsoft.Extensions.Logging/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "7.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Options": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {
@@ -374,27 +469,30 @@
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.targets": {}
+          "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
         }
       },
-      "Microsoft.Extensions.Options/6.0.0": {
+      "Microsoft.Extensions.Options/7.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
-          "Microsoft.Extensions.Primitives": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/netstandard2.1/Microsoft.Extensions.Options.dll": {
+          "lib/net6.0/Microsoft.Extensions.Options.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.1/Microsoft.Extensions.Options.dll": {
+          "lib/net6.0/Microsoft.Extensions.Options.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Primitives/6.0.0": {
+      "Microsoft.Extensions.Primitives/7.0.0": {
         "type": "package",
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -410,10 +508,10 @@
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.JSInterop/6.0.14": {
+      "Microsoft.JSInterop/6.0.15": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.JSInterop.dll": {
@@ -865,25 +963,6 @@
           "lib/net6.0/Syncfusion.PdfExport.Net.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "System.Diagnostics.DiagnosticSource/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
       "System.IO.Pipelines/6.0.3": {
@@ -1000,6 +1079,61 @@
           "lib/net6.0/Blazored.LocalStorage.dll": {}
         }
       },
+      "Blazorise/1.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise.Licensing": "1.1.0",
+          "Microsoft.AspNetCore.Components": "6.0.15",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.3"
+        },
+        "compile": {
+          "lib/net6.0/Blazorise.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Blazorise.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Blazorise.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.props": {}
+        }
+      },
+      "Blazorise.Bootstrap/1.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.2",
+          "Microsoft.AspNetCore.Components": "6.0.15",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.3"
+        },
+        "compile": {
+          "lib/net6.0/Blazorise.Bootstrap.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Blazorise.Bootstrap.dll": {}
+        },
+        "build": {
+          "buildTransitive/Blazorise.Bootstrap.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.Bootstrap.props": {}
+        }
+      },
+      "Blazorise.Licensing/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Blazorise.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Blazorise.Licensing.dll": {}
+        }
+      },
       "LibSassBuilder/2.0.1": {
         "type": "package",
         "build": {
@@ -1018,10 +1152,10 @@
           "lib/netstandard2.0/LocalStorage.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authorization/6.0.14": {
+      "Microsoft.AspNetCore.Authorization/6.0.15": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Metadata": "6.0.14",
+          "Microsoft.AspNetCore.Metadata": "6.0.15",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.3",
           "Microsoft.Extensions.Options": "6.0.0"
         },
@@ -1036,11 +1170,11 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components/6.0.14": {
+      "Microsoft.AspNetCore.Components/6.0.15": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Authorization": "6.0.14",
-          "Microsoft.AspNetCore.Components.Analyzers": "6.0.14"
+          "Microsoft.AspNetCore.Authorization": "6.0.15",
+          "Microsoft.AspNetCore.Components.Analyzers": "6.0.15"
         },
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Components.dll": {
@@ -1053,16 +1187,33 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Analyzers/6.0.14": {
+      "Microsoft.AspNetCore.Components.Analyzers/6.0.15": {
         "type": "package",
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets": {}
         }
       },
-      "Microsoft.AspNetCore.Components.Forms/6.0.14": {
+      "Microsoft.AspNetCore.Components.Authorization/6.0.15": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "6.0.14"
+          "Microsoft.AspNetCore.Authorization": "6.0.15",
+          "Microsoft.AspNetCore.Components": "6.0.15"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Components.Authorization.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Components.Authorization.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Components.Forms/6.0.15": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "6.0.15"
         },
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Components.Forms.dll": {
@@ -1075,13 +1226,13 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Web/6.0.14": {
+      "Microsoft.AspNetCore.Components.Web/6.0.15": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "6.0.14",
-          "Microsoft.AspNetCore.Components.Forms": "6.0.14",
+          "Microsoft.AspNetCore.Components": "6.0.15",
+          "Microsoft.AspNetCore.Components.Forms": "6.0.15",
           "Microsoft.Extensions.DependencyInjection": "6.0.1",
-          "Microsoft.JSInterop": "6.0.14",
+          "Microsoft.JSInterop": "6.0.15",
           "System.IO.Pipelines": "6.0.3"
         },
         "compile": {
@@ -1124,7 +1275,7 @@
           "build/Microsoft.AspNetCore.Components.WebAssembly.DevServer.targets": {}
         }
       },
-      "Microsoft.AspNetCore.Metadata/6.0.14": {
+      "Microsoft.AspNetCore.Metadata/6.0.15": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Metadata.dll": {
@@ -1235,11 +1386,10 @@
           }
         }
       },
-      "Microsoft.Extensions.DependencyInjection/6.0.1": {
+      "Microsoft.Extensions.DependencyInjection/7.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
         },
         "compile": {
           "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
@@ -1252,10 +1402,10 @@
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
@@ -1268,7 +1418,7 @@
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Microsoft.Extensions.FileProviders.Abstractions/6.0.0": {
@@ -1327,27 +1477,51 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Microsoft.Extensions.Logging/6.0.0": {
+      "Microsoft.Extensions.Http/7.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
-          "Microsoft.Extensions.Options": "6.0.0",
-          "System.Diagnostics.DiagnosticSource": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Options": "7.0.0"
         },
         "compile": {
-          "lib/netstandard2.1/Microsoft.Extensions.Logging.dll": {
+          "lib/net6.0/Microsoft.Extensions.Http.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.1/Microsoft.Extensions.Logging.dll": {
+          "lib/net6.0/Microsoft.Extensions.Http.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/6.0.3": {
+      "Microsoft.Extensions.Logging/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "7.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Options": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {
@@ -1360,27 +1534,30 @@
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.targets": {}
+          "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
         }
       },
-      "Microsoft.Extensions.Options/6.0.0": {
+      "Microsoft.Extensions.Options/7.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
-          "Microsoft.Extensions.Primitives": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/netstandard2.1/Microsoft.Extensions.Options.dll": {
+          "lib/net6.0/Microsoft.Extensions.Options.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.1/Microsoft.Extensions.Options.dll": {
+          "lib/net6.0/Microsoft.Extensions.Options.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Primitives/6.0.0": {
+      "Microsoft.Extensions.Primitives/7.0.0": {
         "type": "package",
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -1396,10 +1573,10 @@
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.JSInterop/6.0.14": {
+      "Microsoft.JSInterop/6.0.15": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.JSInterop.dll": {
@@ -1853,25 +2030,6 @@
           }
         }
       },
-      "System.Diagnostics.DiagnosticSource/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
-        "compile": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
-        }
-      },
       "System.IO.Pipelines/6.0.3": {
         "type": "package",
         "compile": {
@@ -1983,6 +2141,99 @@
         "lib/net7.0/Blazored.LocalStorage.dll"
       ]
     },
+    "Blazorise/1.2.2": {
+      "sha512": "IISYFSUhmCjsGBUbW4EBVnU0Me2wtvlIeuZ/NqNj6OpT/T6TmxN2xvwNUrRrVqnysZ/3sbjhCOuQqt6p7gbjqw==",
+      "type": "package",
+      "path": "blazorise/1.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.1.2.2.nupkg.sha512",
+        "blazorise.nuspec",
+        "build/Blazorise.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazorise.props",
+        "buildTransitive/Blazorise.props",
+        "lib/net6.0/Blazorise.dll",
+        "lib/net6.0/Blazorise.xml",
+        "lib/net7.0/Blazorise.dll",
+        "lib/net7.0/Blazorise.xml",
+        "staticwebassets/blazorise.css",
+        "staticwebassets/blazorise.min.css",
+        "staticwebassets/breakpoint.js",
+        "staticwebassets/button.js",
+        "staticwebassets/closable.js",
+        "staticwebassets/colorPicker.js",
+        "staticwebassets/datePicker.js",
+        "staticwebassets/dragDrop.js",
+        "staticwebassets/dropdown.js",
+        "staticwebassets/fileEdit.js",
+        "staticwebassets/filePicker.js",
+        "staticwebassets/inputMask.js",
+        "staticwebassets/io.js",
+        "staticwebassets/memoEdit.js",
+        "staticwebassets/numericPicker.js",
+        "staticwebassets/observer.js",
+        "staticwebassets/popper.js",
+        "staticwebassets/table.js",
+        "staticwebassets/textEdit.js",
+        "staticwebassets/theme.js",
+        "staticwebassets/timePicker.js",
+        "staticwebassets/tooltip.js",
+        "staticwebassets/utilities.js",
+        "staticwebassets/validators/DateTimeMaskValidator.js",
+        "staticwebassets/validators/NoValidator.js",
+        "staticwebassets/validators/NumericMaskValidator.js",
+        "staticwebassets/validators/RegExMaskValidator.js",
+        "staticwebassets/vendors/Behave.js",
+        "staticwebassets/vendors/Pickr.js",
+        "staticwebassets/vendors/autoNumeric.js",
+        "staticwebassets/vendors/flatpickr.js",
+        "staticwebassets/vendors/inputmask.js",
+        "staticwebassets/vendors/jsencrypt.js",
+        "staticwebassets/vendors/sha512.js"
+      ]
+    },
+    "Blazorise.Bootstrap/1.2.2": {
+      "sha512": "W8goQlD/S0yjZjvk86E+l6zh3YRmhzmys3WTPFZVFZfUWxMyPUJdKMS3ZFvysVZMqfSsssysfgl1fofQVDXNKA==",
+      "type": "package",
+      "path": "blazorise.bootstrap/1.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.bootstrap.1.2.2.nupkg.sha512",
+        "blazorise.bootstrap.nuspec",
+        "build/Blazorise.Bootstrap.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazorise.Bootstrap.props",
+        "buildTransitive/Blazorise.Bootstrap.props",
+        "lib/net6.0/Blazorise.Bootstrap.dll",
+        "lib/net7.0/Blazorise.Bootstrap.dll",
+        "staticwebassets/blazorise.bootstrap.css",
+        "staticwebassets/blazorise.bootstrap.min.css",
+        "staticwebassets/modal.js",
+        "staticwebassets/tooltip.js"
+      ]
+    },
+    "Blazorise.Licensing/1.1.0": {
+      "sha512": "QDHl4m8ixmq+xIsW3d0kHBpJYJPqMBzbNCFhtEsqSrmrAPMEmSVm6r9pprkgT51leeqvkPxuy22Osiql48KgDQ==",
+      "type": "package",
+      "path": "blazorise.licensing/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.licensing.1.1.0.nupkg.sha512",
+        "blazorise.licensing.nuspec",
+        "lib/net6.0/Blazorise.Licensing.dll",
+        "lib/net7.0/Blazorise.Licensing.dll"
+      ]
+    },
     "LibSassBuilder/2.0.1": {
       "sha512": "f+7TWQtCirW94VdzKL9SaAfeSF96TeEqdtDztmTGbndrcUlZZlL6uJLZKQCXQgj1BB3OqX0584OCvqFHrkAusA==",
       "type": "package",
@@ -2025,10 +2276,10 @@
         "localstorage.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Authorization/6.0.14": {
-      "sha512": "gFktP5LXNvPPWOALCVb0jdBscSTNDsAbP3eSq4BH0xid57/8SgM+nQssPLS18qa8DdNDVIJjhtpyZguMb7NNuQ==",
+    "Microsoft.AspNetCore.Authorization/6.0.15": {
+      "sha512": "STjQZVKTwbvwKJXR5agYUOgDbi2ZOYtFgRVnVOWZFD+4VxEOgNrP6MWsur3v9jiM0gRCGxczRCB6M65byJ8L+w==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authorization/6.0.14",
+      "path": "microsoft.aspnetcore.authorization/6.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2040,14 +2291,14 @@
         "lib/net6.0/Microsoft.AspNetCore.Authorization.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.xml",
-        "microsoft.aspnetcore.authorization.6.0.14.nupkg.sha512",
+        "microsoft.aspnetcore.authorization.6.0.15.nupkg.sha512",
         "microsoft.aspnetcore.authorization.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components/6.0.14": {
-      "sha512": "hd8uaIm2BGfMUws41PocD4XdeTlGCv06iEiXns3nAFMJy6fLPbYrLrsMDMtZE46/53M/MVhhR767sCWrZuiKJQ==",
+    "Microsoft.AspNetCore.Components/6.0.15": {
+      "sha512": "IEzta5yOeq558iB1e442vfOjGh9F6/yTYCrvgQjSldrOjplSmtunnHE8v0tJwZTk07PlxP4jeGJOo81f+4b5kw==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components/6.0.14",
+      "path": "microsoft.aspnetcore.components/6.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2055,14 +2306,14 @@
         "THIRD-PARTY-NOTICES.txt",
         "lib/net6.0/Microsoft.AspNetCore.Components.dll",
         "lib/net6.0/Microsoft.AspNetCore.Components.xml",
-        "microsoft.aspnetcore.components.6.0.14.nupkg.sha512",
+        "microsoft.aspnetcore.components.6.0.15.nupkg.sha512",
         "microsoft.aspnetcore.components.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.Analyzers/6.0.14": {
-      "sha512": "IkNGrKgeGc9oL9KrhP5dojlTMJyKV6NzxEt3anMJJB/V+jpqcAkrw++NshDzclnf9uX033TVQtg5/ENzlQk8xA==",
+    "Microsoft.AspNetCore.Components.Analyzers/6.0.15": {
+      "sha512": "SY3lpvgNeGiCHbBi+B8yIB/LhfvXUtXdHLEasFf+ervZ0qEaGyN+qF92Xk70rVpmXZrK3bxAtr1Fez2ufepU6w==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.analyzers/6.0.14",
+      "path": "microsoft.aspnetcore.components.analyzers/6.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2071,14 +2322,29 @@
         "analyzers/dotnet/cs/Microsoft.AspNetCore.Components.Analyzers.dll",
         "build/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
         "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
-        "microsoft.aspnetcore.components.analyzers.6.0.14.nupkg.sha512",
+        "microsoft.aspnetcore.components.analyzers.6.0.15.nupkg.sha512",
         "microsoft.aspnetcore.components.analyzers.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.Forms/6.0.14": {
-      "sha512": "O46kGrM+9wZ05rsapemkhx3/JIbGUz9LlLENp12zu71K/f0dLFYai8RuobyKGNB1IvsNR4fzkjrJdr+pm4fuow==",
+    "Microsoft.AspNetCore.Components.Authorization/6.0.15": {
+      "sha512": "noOYFiKPngcXIFsDgPBWk/MRPoIO3//1RDlrYST9yFL1lLbhQTYvdturCIOwjYjJbyMst8ecMfXqYXVaSAn0KA==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.forms/6.0.14",
+      "path": "microsoft.aspnetcore.components.authorization/6.0.15",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/net6.0/Microsoft.AspNetCore.Components.Authorization.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Components.Authorization.xml",
+        "microsoft.aspnetcore.components.authorization.6.0.15.nupkg.sha512",
+        "microsoft.aspnetcore.components.authorization.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Components.Forms/6.0.15": {
+      "sha512": "eYn6YId3ImDjkL0Rleno5bNf131IQVfa4p0XajJYfVfXoReQqHqJFQOOLaKboObXFcbLtR+5zTTH9yc7SN1HSA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.components.forms/6.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2086,14 +2352,14 @@
         "THIRD-PARTY-NOTICES.txt",
         "lib/net6.0/Microsoft.AspNetCore.Components.Forms.dll",
         "lib/net6.0/Microsoft.AspNetCore.Components.Forms.xml",
-        "microsoft.aspnetcore.components.forms.6.0.14.nupkg.sha512",
+        "microsoft.aspnetcore.components.forms.6.0.15.nupkg.sha512",
         "microsoft.aspnetcore.components.forms.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.Web/6.0.14": {
-      "sha512": "h/5OzlN1coJAAXE+pU0hw31BWNUjHjIqy+IWwkl5/vYNHGGbMgx5RpeBszZZ0yIvbsso+3gqeZmElSIZWLP1lA==",
+    "Microsoft.AspNetCore.Components.Web/6.0.15": {
+      "sha512": "nRqJv7KTc+uSgbfBfGAfQyQB4W2st+DpTFygNDnu1C+7TLSIT7rLI/VACraHimXPmCRkB0gFuTz1mKPbVylKSg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.web/6.0.14",
+      "path": "microsoft.aspnetcore.components.web/6.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2101,7 +2367,7 @@
         "THIRD-PARTY-NOTICES.txt",
         "lib/net6.0/Microsoft.AspNetCore.Components.Web.dll",
         "lib/net6.0/Microsoft.AspNetCore.Components.Web.xml",
-        "microsoft.aspnetcore.components.web.6.0.14.nupkg.sha512",
+        "microsoft.aspnetcore.components.web.6.0.15.nupkg.sha512",
         "microsoft.aspnetcore.components.web.nuspec"
       ]
     },
@@ -2244,10 +2510,10 @@
         "tools/x86/aspnetcorev2_inprocess.dll"
       ]
     },
-    "Microsoft.AspNetCore.Metadata/6.0.14": {
-      "sha512": "giNY/VjXoC2gauhzQiCIEQ620RvbxCfOKWY6K8Sc7LFgo6jbERdIN3QNpQ1CI8oFLz9e2mbUGnBsCM9KMMDHsw==",
+    "Microsoft.AspNetCore.Metadata/6.0.15": {
+      "sha512": "J1+dXw+8nI/FZ5RO7eKWJcBDC2ywCns1sbhk9f+RT1QjLqH7GLGHDHUpYlEy59Lf0DBZT7PHQzTeq9ZKAPk8yQ==",
       "type": "package",
-      "path": "microsoft.aspnetcore.metadata/6.0.14",
+      "path": "microsoft.aspnetcore.metadata/6.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2259,7 +2525,7 @@
         "lib/net6.0/Microsoft.AspNetCore.Metadata.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.xml",
-        "microsoft.aspnetcore.metadata.6.0.14.nupkg.sha512",
+        "microsoft.aspnetcore.metadata.6.0.15.nupkg.sha512",
         "microsoft.aspnetcore.metadata.nuspec"
       ]
     },
@@ -2429,52 +2695,60 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection/6.0.1": {
-      "sha512": "vWXPg3HJQIpZkENn1KWq8SfbqVujVD7S7vIAyFXXqK5xkf1Vho+vG0bLBCHxU36lD1cLLtmGpfYf0B3MYFi9tQ==",
+    "Microsoft.Extensions.DependencyInjection/7.0.0": {
+      "sha512": "elNeOmkeX3eDVG6pYVeV82p29hr+UKDaBhrZyWvWLw/EVZSYEkZlQdkp0V39k/Xehs2Qa0mvoCvkVj3eQxNQ1Q==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection/6.0.1",
+      "path": "microsoft.extensions.dependencyinjection/7.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/net461/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.xml",
         "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll",
         "lib/net6.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.xml",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
-        "microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
-      "sha512": "xlzi2IYREJH3/m6+lUrQlujzX8wDitm4QGnUu6kUXTQAWPuZY8i+ticFJbzfqaetLA6KR/rO6Ew/HuYD+bxifg==",
+    "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
+      "sha512": "h3j/QfmFN4S0w4C2A6X7arXij/M/OVw3uQHSOFxnND4DyAzO1F9eMX7Eti7lU/OkSthEE0WzRsfT/Dmx86jzCw==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/6.0.0",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/7.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/net461/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -2548,31 +2822,66 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Logging/6.0.0": {
-      "sha512": "eIbyj40QDg1NDz0HBW0S5f3wrLVnKWnDJ/JtZ+yJDFnDj90VoPuoPmFkeaXrtu+0cKm5GRAwoDf+dBWXK0TUdg==",
+    "Microsoft.Extensions.Http/7.0.0": {
+      "sha512": "9Pq9f/CvOSz0t9yQa6g1uWpxa2sm13daLFm8EZwy9MaQUjKXWdNUXQwIxwhmba5N83UIqURiPHSNqGK1vfWF2w==",
       "type": "package",
-      "path": "microsoft.extensions.logging/6.0.0",
+      "path": "microsoft.extensions.http/7.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/Microsoft.Extensions.Logging.dll",
-        "lib/net461/Microsoft.Extensions.Logging.xml",
+        "buildTransitive/net461/Microsoft.Extensions.Http.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Http.targets",
+        "lib/net462/Microsoft.Extensions.Http.dll",
+        "lib/net462/Microsoft.Extensions.Http.xml",
+        "lib/net6.0/Microsoft.Extensions.Http.dll",
+        "lib/net6.0/Microsoft.Extensions.Http.xml",
+        "lib/net7.0/Microsoft.Extensions.Http.dll",
+        "lib/net7.0/Microsoft.Extensions.Http.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.xml",
+        "microsoft.extensions.http.7.0.0.nupkg.sha512",
+        "microsoft.extensions.http.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Logging/7.0.0": {
+      "sha512": "Nw2muoNrOG5U5qa2ZekXwudUn2BJcD41e65zwmDHb1fQegTX66UokLWZkJRpqSSHXDOWZ5V0iqhbxOEky91atA==",
+      "type": "package",
+      "path": "microsoft.extensions.logging/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Logging.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.targets",
+        "lib/net462/Microsoft.Extensions.Logging.dll",
+        "lib/net462/Microsoft.Extensions.Logging.xml",
+        "lib/net6.0/Microsoft.Extensions.Logging.dll",
+        "lib/net6.0/Microsoft.Extensions.Logging.xml",
+        "lib/net7.0/Microsoft.Extensions.Logging.dll",
+        "lib/net7.0/Microsoft.Extensions.Logging.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.xml",
         "lib/netstandard2.1/Microsoft.Extensions.Logging.dll",
         "lib/netstandard2.1/Microsoft.Extensions.Logging.xml",
-        "microsoft.extensions.logging.6.0.0.nupkg.sha512",
+        "microsoft.extensions.logging.7.0.0.nupkg.sha512",
         "microsoft.extensions.logging.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Logging.Abstractions/6.0.3": {
-      "sha512": "SUpStcdjeBbdKjPKe53hVVLkFjylX0yIXY8K+xWa47+o1d+REDyOMZjHZa+chsQI1K9qZeiHWk9jos0TFU7vGg==",
+    "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
+      "sha512": "kmn78+LPVMOWeITUjIlfxUPDsI0R6G0RkeAMBmQxAJ7vBJn4q2dTva7pWi65ceN5vPGjJ9q/Uae2WKgvfktJAw==",
       "type": "package",
-      "path": "microsoft.extensions.logging.abstractions/6.0.3",
+      "path": "microsoft.extensions.logging.abstractions/7.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2607,70 +2916,98 @@
         "analyzers/dotnet/roslyn4.0/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
         "analyzers/dotnet/roslyn4.0/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
         "analyzers/dotnet/roslyn4.0/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "buildTransitive/net461/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/net462/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
-        "buildTransitive/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.targets",
         "buildTransitive/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.targets",
-        "lib/net461/Microsoft.Extensions.Logging.Abstractions.dll",
-        "lib/net461/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/net462/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Logging.Abstractions.xml",
         "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll",
         "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "microsoft.extensions.logging.abstractions.6.0.3.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
         "microsoft.extensions.logging.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Options/6.0.0": {
-      "sha512": "dzXN0+V1AyjOe2xcJ86Qbo233KHuLEY0njf/P2Kw8SfJU+d45HNS2ctJdnEnrWbM9Ye2eFgaC5Mj9otRMU6IsQ==",
+    "Microsoft.Extensions.Options/7.0.0": {
+      "sha512": "lP1yBnTTU42cKpMozuafbvNtQ7QcBjr/CcK3bYOGEMH55Fjt+iecXjT6chR7vbgCMqy3PG3aNQSZgo/EuY/9qQ==",
       "type": "package",
-      "path": "microsoft.extensions.options/6.0.0",
+      "path": "microsoft.extensions.options/7.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/Microsoft.Extensions.Options.dll",
-        "lib/net461/Microsoft.Extensions.Options.xml",
+        "buildTransitive/net461/Microsoft.Extensions.Options.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Options.targets",
+        "lib/net462/Microsoft.Extensions.Options.dll",
+        "lib/net462/Microsoft.Extensions.Options.xml",
+        "lib/net6.0/Microsoft.Extensions.Options.dll",
+        "lib/net6.0/Microsoft.Extensions.Options.xml",
+        "lib/net7.0/Microsoft.Extensions.Options.dll",
+        "lib/net7.0/Microsoft.Extensions.Options.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Options.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Options.xml",
         "lib/netstandard2.1/Microsoft.Extensions.Options.dll",
         "lib/netstandard2.1/Microsoft.Extensions.Options.xml",
-        "microsoft.extensions.options.6.0.0.nupkg.sha512",
+        "microsoft.extensions.options.7.0.0.nupkg.sha512",
         "microsoft.extensions.options.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Primitives/6.0.0": {
-      "sha512": "9+PnzmQFfEFNR9J2aDTfJGGupShHjOuGw4VUv+JB044biSHrnmCIMD+mJHmb2H7YryrfBEXDurxQ47gJZdCKNQ==",
+    "Microsoft.Extensions.Primitives/7.0.0": {
+      "sha512": "um1KU5kxcRp3CNuI8o/GrZtD4AIOXDk+RLsytjZ9QPok3ttLUelLKpilVPuaFT3TFjOhSibUAso0odbOaCDj3Q==",
       "type": "package",
-      "path": "microsoft.extensions.primitives/6.0.0",
+      "path": "microsoft.extensions.primitives/7.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Primitives.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Primitives.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/Microsoft.Extensions.Primitives.dll",
-        "lib/net461/Microsoft.Extensions.Primitives.xml",
+        "lib/net462/Microsoft.Extensions.Primitives.dll",
+        "lib/net462/Microsoft.Extensions.Primitives.xml",
         "lib/net6.0/Microsoft.Extensions.Primitives.dll",
         "lib/net6.0/Microsoft.Extensions.Primitives.xml",
-        "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll",
-        "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.xml",
+        "lib/net7.0/Microsoft.Extensions.Primitives.dll",
+        "lib/net7.0/Microsoft.Extensions.Primitives.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
-        "microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+        "microsoft.extensions.primitives.7.0.0.nupkg.sha512",
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.JSInterop/6.0.14": {
-      "sha512": "k1DAQqTVYaQGzh4uBJo318oSWa3OLdgJN+ZrKBzRn3Y+iG1VNxIBCBKNW9OgyEVv55fw81+yfHkv1f0e5RXOBg==",
+    "Microsoft.JSInterop/6.0.15": {
+      "sha512": "0pGIlgMfwFKOsaxCdGNIlftIUbWW8FdF5EYiewYfENgArmlHfwWHF629M14Hv6+6KsOnnKjulN8/VxdTov27Eg==",
       "type": "package",
-      "path": "microsoft.jsinterop/6.0.14",
+      "path": "microsoft.jsinterop/6.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2678,7 +3015,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net6.0/Microsoft.JSInterop.dll",
         "lib/net6.0/Microsoft.JSInterop.xml",
-        "microsoft.jsinterop.6.0.14.nupkg.sha512",
+        "microsoft.jsinterop.6.0.15.nupkg.sha512",
         "microsoft.jsinterop.nuspec"
       ]
     },
@@ -3307,31 +3644,6 @@
         "syncfusion_logo.png"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/6.0.0": {
-      "sha512": "frQDfv0rl209cKm1lnwTgFPzNigy2EKk1BS3uAvHvlBVKe5cymGyHO+Sj+NLv5VF/AhHsqPIUUwya5oV4CHMUw==",
-      "type": "package",
-      "path": "system.diagnostics.diagnosticsource/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/netcoreapp2.0/System.Diagnostics.DiagnosticSource.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net461/System.Diagnostics.DiagnosticSource.xml",
-        "lib/net5.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net5.0/System.Diagnostics.DiagnosticSource.xml",
-        "lib/net6.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net6.0/System.Diagnostics.DiagnosticSource.xml",
-        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-        "system.diagnostics.diagnosticsource.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "System.IO.Pipelines/6.0.3": {
       "sha512": "ryTgF+iFkpGZY1vRQhfCzX0xTdlV3pyaTTqRu2ETbEv+HlV7O6y7hyQURnghNIXvctl5DuZ//Dpks6HdL/Txgw==",
       "type": "package",
@@ -3524,9 +3836,13 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Blazored.LocalStorage >= 4.3.0",
+      "Blazorise >= 1.2.2",
+      "Blazorise.Bootstrap >= 1.2.2",
       "LocalStorage >= 2.1.0",
+      "Microsoft.AspNetCore.Components.Authorization >= 6.0.15",
       "Microsoft.AspNetCore.Components.WebAssembly >= 6.0.14",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 6.0.14",
+      "Microsoft.Extensions.Http >= 7.0.0",
       "Radzen.Blazor >= 4.7.14",
       "Syncfusion.Blazor >= 21.1.37",
       "Syncfusion.Blazor.Data >= 21.1.37",
@@ -3579,9 +3895,21 @@
             "target": "Package",
             "version": "[4.3.0, )"
           },
+          "Blazorise": {
+            "target": "Package",
+            "version": "[1.2.2, )"
+          },
+          "Blazorise.Bootstrap": {
+            "target": "Package",
+            "version": "[1.2.2, )"
+          },
           "LocalStorage": {
             "target": "Package",
             "version": "[2.1.0, )"
+          },
+          "Microsoft.AspNetCore.Components.Authorization": {
+            "target": "Package",
+            "version": "[6.0.15, )"
           },
           "Microsoft.AspNetCore.Components.WebAssembly": {
             "target": "Package",
@@ -3591,6 +3919,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.14, )"
+          },
+          "Microsoft.Extensions.Http": {
+            "target": "Package",
+            "version": "[7.0.0, )"
           },
           "Radzen.Blazor": {
             "target": "Package",

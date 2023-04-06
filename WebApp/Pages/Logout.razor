@@ -1,0 +1,20 @@
+
+@using Blazored.LocalStorage
+@page "/logout"
+
+<h3>Logout</h3>
+@inject ILocalStorageService _localStorage
+@inject IHttpClientFactory ClientFactory
+@inject NavigationManager NavigationManager
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+            _localStorage.RemoveItemAsync(Constants.TOKEN_NAME);
+            NavigationManager.NavigateTo("/login", forceLoad: true);
+        
+    }
+
+}

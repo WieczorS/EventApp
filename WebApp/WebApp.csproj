@@ -8,9 +8,13 @@
 
     <ItemGroup>
         <PackageReference Include="Blazored.LocalStorage" Version="4.3.0" />
+        <PackageReference Include="Blazorise" Version="1.2.2" />
+        <PackageReference Include="Blazorise.Bootstrap" Version="1.2.2" />
         <PackageReference Include="LocalStorage" Version="2.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.15" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.14" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.14" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
         <PackageReference Include="Radzen.Blazor" Version="4.7.14" />
         <PackageReference Include="Syncfusion.Blazor" Version="21.1.37" />
         <PackageReference Include="Syncfusion.Blazor.Data" Version="21.1.37" />

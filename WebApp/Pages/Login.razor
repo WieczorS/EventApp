@@ -1,76 +1,56 @@
 
 
 @page "/login"
-@using Hanssens.Net
+@layout EmptyLayout
 @using Blazored.LocalStorage
+@using System.Net
+@using Blazorise.Extensions
 @inject ILocalStorageService _LocalStorage
-
-
-
-<h1>Logowanie</h1>
-
-@* @if (!string.IsNullOrEmpty(ErrorMessage)) *@
-@* { *@
-@*     <div class="alert alert-danger" role="alert">@ErrorMessage</div> *@
-@* } *@
-
-@* <form onsubmit=@HandleSubmit()> *@
-@*     <div class="form-group"> *@
-@*         <label for="username">Nazwa użytkownika:</label> *@
-@*         <input type="text" class="form-control" id="username" @bind-value="@Username" /> *@
-@*     </div> *@
-@*     <div class="form-group"> *@
-@*         <label for="password">Hasło:</label> *@
-@*         <input type="password" class="form-control" id="password" @bind-value="@Password" /> *@
-@*     </div> *@
-@*      <button type="submit" class="btn btn-primary" @onclick="HandleSubmit">Zaloguj się</button>  *@
-@* </form> *@
-
+@inject IHttpClientFactory ClientFactory
+@inject NavigationManager NavigationManager
+@inject NotificationService NotificationService
+@inject HttpClient HttpClient
 
    <RadzenStack Gap="0" Class="rz-my-12 rz-mx-auto rz-border-radius-6 rz-shadow-10" Style="width: 100%; max-width: 400px; overflow: hidden;">
        <RadzenCard Class="rz-shadow-0 rz-border-radius-0 rz-background-color-info rz-p-12" style="text-align: center;">
            <RadzenText TextStyle="TextStyle.DisplayH3" TagName="TagName.H2" Class="rz-color-white rz-mb-0">WebApp</RadzenText>
        </RadzenCard>
        <RadzenCard Class="rz-shadow-0 rz-p-12">
-           <RadzenLogin  AllowRegister="false" AllowResetPassword="false"  Login=@(args => HandleSubmit(args)) />
+           <form onsubmit="@HandleSubmit">
+               <RadzenLogin AllowRegister="false" AllowResetPassword="false" Login=@(args => HandleSubmit(args)) />
+           </form>
        </RadzenCard>
    </RadzenStack>
 
-@inject HttpClient HttpClient
+
 
 @code {
-
-    public class UserLogin
+    
+    async Task HandleSubmit(LoginArgs args)
     {
-        private string Username { get; set; }
-        private string Password { get; set; }
-        private string ErrorMessage { get; set; }
-    }
-
-
-
-
-    public async void HandleSubmit(LoginArgs args)
-    {
+        var Http = ClientFactory.CreateClient("Api");
         try
         {
-    // Wywołaj REST API, aby uwierzytelnić użytkownika
-            var result = await HttpClient.PostAsJsonAsync("http://localhost:5175/Auth", new
+            // Wywołaj API, aby uwierzytelnić użytkownika
+            var result = await Http.PostAsJsonAsync("http://localhost:5175/Auth", new
             {
                 Login = args.Username,
                 Password = args.Password
             });
-            result.EnsureSuccessStatusCode();
             
+
             var token = await result.Content.ReadAsStringAsync();
-            await _LocalStorage.SetItemAsync("userToken",token);
-            
+            result.EnsureSuccessStatusCode();
+            await _LocalStorage.SetItemAsync(Constants.TOKEN_NAME,token);
+            NavigationManager.NavigateTo("/listevents");
+
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Wystąpił błąd podczas logowania: {ex.Message}");
+            Console.WriteLine(ex);
+            NotificationService.Notify(
+                new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Błędne hasło lub login!", Duration = 6000 });
 
         }
     }
-
 }

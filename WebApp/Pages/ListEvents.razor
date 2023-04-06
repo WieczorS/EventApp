@@ -6,9 +6,10 @@
 @using Blazored.LocalStorage
 @inject HttpClient HttpClient
 @inject ILocalStorageService _LocalStorage
+@inject IHttpClientFactory ClientFactory
 
 
-<h1>Lista wydarzeń</h1>
+<h1>Lista wydarzeń ddddd</h1>
 
 @if (events == null)
 {
@@ -46,9 +47,10 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        var token = (await _LocalStorage.GetItemAsStringAsync("userToken")).Replace("\"", "");
-        HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
-        events = await HttpClient.GetFromJsonAsync<List<Event>>("http://localhost:5175/Event/all");
+        var client = ClientFactory.CreateClient("Api");
+        
+        //Bez clienta   HttpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
+        events = await client.GetFromJsonAsync<List<Event>>("http://localhost:5175/Event/all");
     }
 
   
